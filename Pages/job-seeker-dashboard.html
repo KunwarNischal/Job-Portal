@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Seeker Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Main Container -->
+  <div class="flex min-h-screen">
+
+    <!-- Sidebar -->
+    <div class="w-64 bg-white shadow-md p-5">
+      <h2 class="text-xl font-bold text-blue-600 mb-6">Job Portal</h2>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="job-seeker-dashboard.html" class="hover:text-blue-600">Dashboard</a></li>
+        <li><a href="profile.html" class="hover:text-blue-600">Profile</a></li>
+        <li><a href="edit-profile.html" class="hover:text-blue-600">Edit Profile</a></li>
+        <li><a href="applied-jobs.html" class="hover:text-blue-600">Applied Jobs</a></li>
+        <li class="text-red-500">Logout</li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+      <!-- Page Title -->
+      <div class="bg-white p-4 rounded shadow mb-6">
+        <h1 class="text-2xl font-bold">Welcome, Job Seeker 👋</h1>
+        <p class="text-gray-600">Here is your dashboard overview</p>
+      </div>
+      <!-- Stats Section -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+
+        <!-- Card 1 -->
+        <div class="bg-white p-5 rounded shadow">
+          <h3 class="text-gray-600">Applied Jobs</h3>
+          <p class="text-3xl font-bold text-blue-600">12</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white p-5 rounded shadow">
+          <h3 class="text-gray-600">Saved Jobs</h3>
+          <p class="text-3xl font-bold text-green-600">5</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white p-5 rounded shadow">
+          <h3 class="text-gray-600">Profile Completion</h3>
+          <p class="text-3xl font-bold text-yellow-500">80%</p>
+        </div>
+
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="bg-white p-5 rounded shadow">
+        <h2 class="text-lg font-bold mb-4">Recent Activity</h2>
+
+        <ul class="space-y-2 text-gray-600">
+          <li>✔ Applied for Frontend Developer</li>
+          <li>✔ Applied for QA Intern</li>
+          <li>✔ Profile updated</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

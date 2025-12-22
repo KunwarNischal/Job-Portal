@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile - Job Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Main Layout -->
+  <div class="flex min-h-screen">
+
+    <!-- Sidebar -->
+    <div class="w-64 bg-white shadow-md p-5">
+      <h2 class="text-xl font-bold text-blue-600 mb-6">Job Portal</h2>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="job-seeker-dashboard.html" class="hover:text-blue-600">Dashboard</a></li>
+        <li class="font-semibold text-blue-600">Profile</li>
+        <li><a href="edit-profile.html" class="hover:text-blue-600">Edit Profile</a></li>
+        <li><a href="applied-jobs.html" class="hover:text-blue-600">Applied Jobs</a></li>
+        <li class="text-red-500">Logout</li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+      <!-- Page Title -->
+      <div class="bg-white p-4 rounded shadow mb-6">
+        <h1 class="text-2xl font-bold">My Profile</h1>
+        <p class="text-gray-600">View your profile details</p>
+      </div>
+      <!-- Profile Card -->
+      <div class="bg-white p-6 rounded shadow max-w-3xl">
+        <!-- Basic Info -->
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold mb-2">Nischal Kunwar</h2>
+          <p class="text-gray-600">Full Stack Developer</p>
+        </div>
+
+        <!-- Personal Information -->
+        <div class="mb-6">
+          <h3 class="text-lg font-semibold mb-3">Personal Information</h3>
+
+          <div class="space-y-2 text-gray-700">
+            <p><strong>Email:</strong>kunwarnischal977@gmail.com</p>
+            <p><strong>Phone:</strong>+977-9749242309</p>
+            <p><strong>Location:</strong>Kathmandu, Nepal</p>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="mb-6">
+          <h3 class="text-lg font-semibold mb-3">Skills</h3>
+
+          <p class="text-gray-700">
+            HTML, CSS, JavaScript, React, Node.js, Tailwind CSS, MongoDB
+          </p>
+        </div>
+
+        <!-- Experience -->
+        <div class="mb-6">
+          <h3 class="text-lg font-semibold mb-3">Experience</h3>
+
+          <p class="text-gray-700">
+            Worked as a Full Stack Developer building web applications using
+            MERN stack and modern frontend technologies.
+          </p>
+        </div>
+
+        <!-- Resume -->
+        <div class="mb-6">
+          <h3 class="text-lg font-semibold mb-3">Resume</h3>
+
+          <p class="text-gray-700">Nischal_Kunwar_Resume.pdf</p>
+        </div>
+
+        <!-- Edit Button -->
+        <a href="edit-profile.html"
+           class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+          Edit Profile
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Applied Jobs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<body class="bg-gray-100">
+  <!-- Main Layout -->
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white shadow-md p-5">
+      <h2 class="text-xl font-bold text-blue-600 mb-6">Job Portal</h2>
+      <ul class="space-y-3 text-gray-700">
+        <li><a href="job-seeker-dashboard.html" class="hover:text-blue-600">Dashboard</a></li>
+        <li><a href="profile.html" class="hover:text-blue-600">Profile</a></li>
+        <li><a href="edit-profile.html" class="hover:text-blue-600">Edit Profile</a></li>
+        <li class="font-semibold text-blue-600">Applied Jobs</li>
+        <li class="text-red-500">Logout</li>
+      </ul>
+    </div>
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+      <!-- Page Title -->
+      <div class="bg-white p-4 rounded shadow mb-6">
+        <h1 class="text-2xl font-bold">Applied Jobs</h1>
+        <p class="text-gray-600">All jobs you have applied for</p>
+      </div>
+      <!-- Content Area -->
+      <div class="bg-white p-6 rounded shadow max-w-5xl mx-auto">
+        <h2 class="text-xl font-semibold mb-4">My Applications</h2>
+
+        <!-- Table (Desktop View) -->
+        <div class="hidden md:block bg-white border rounded shadow">
+          <table class="w-full text-left">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="p-3">Job</th>
+                <th class="p-3">Company</th>
+                <th class="p-3">Date</th>
+                <th class="p-3">Status</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr class="border-t">
+                <td class="p-3">Frontend Developer</td>
+                <td class="p-3">Tech Solutions</td>
+                <td class="p-3">Dec 10, 2024</td>
+                <td class="p-3 text-yellow-600">Pending</td>
+              </tr>
+
+              <tr class="border-t">
+                <td class="p-3">Backend Developer</td>
+                <td class="p-3">Digital Agency</td>
+                <td class="p-3">Dec 8, 2024</td>
+                <td class="p-3 text-green-600">Accepted</td>
+              </tr>
+
+              <tr class="border-t">
+                <td class="p-3">Full Stack Developer</td>
+                <td class="p-3">Startup Co.</td>
+                <td class="p-3">Dec 5, 2024</td>
+                <td class="p-3 text-red-600">Rejected</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Cards (Mobile View) -->
+        <div class="md:hidden space-y-4">
+
+          <div class="bg-white p-4 rounded shadow">
+            <h3 class="font-semibold">Frontend Developer</h3>
+            <p class="text-sm text-gray-600">Tech Solutions</p>
+            <p class="text-sm mt-1">Dec 10, 2024</p>
+            <p class="text-yellow-600 font-medium mt-1">Pending</p>
+          </div>
+
+          <div class="bg-white p-4 rounded shadow">
+            <h3 class="font-semibold">Backend Developer</h3>
+            <p class="text-sm text-gray-600">Digital Agency</p>
+            <p class="text-sm mt-1">Dec 8, 2024</p>
+            <p class="text-green-600 font-medium mt-1">Accepted</p>
+          </div>
+
+          <div class="bg-white p-4 rounded shadow">
+            <h3 class="font-semibold">Full Stack Developer</h3>
+            <p class="text-sm text-gray-600">Startup Co.</p>
+            <p class="text-sm mt-1">Dec 5, 2024</p>
+            <p class="text-red-600 font-medium mt-1">Rejected</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

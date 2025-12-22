@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAKSHAM ROJGAR - Search Results</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons (for clean, modern icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0ea5e9',
+                        teal: {
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            50: '#f0fdfa',
+                        },
+                        dark: '#111827'
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+
+        /* Ensure job detail stays visible when list is scrolled */
+        .job-detail-sticky {
+            top: 5rem; /* Space for fixed navbar */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navbar (Fixed, Reused) -->
+    <nav class="bg-white fixed w-full z-30 shadow-md top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <img src="logo-company.png" alt="SAKSHAM ROJGAR Logo" class="h-20 w-20">
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-500">
+                    <a href="#" class="hover:text-teal-600 transition">Home</a>
+                    <a href="#" class="text-teal-600 font-semibold">All Jobs</a>
+                    <a href="#" class="hover:text-teal-600 transition">Companies</a>
+                    <a href="#" class="hover:text-teal-600 transition">Career Advice</a>
+                    <a href="#" class="hover:text-teal-600 transition">Pages</a>
+                </div>
+
+                <!-- User Actions -->
+                <div class="hidden md:flex items-center gap-4">
+                    <button class="text-gray-400 hover:text-teal-600 transition">
+                        <i class="ph ph-bell text-2xl"></i>
+                    </button>
+                    <div class="h-10 w-10 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-sm">
+                        <img src="https://i.pravatar.cc/150?img=32" alt="User" class="h-full w-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Mobile menu button (Decorative only) -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-500 hover:text-gray-900 focus:outline-none">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content for Job Search -->
+    <main class="pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <h1 class="text-4xl font-bold text-gray-900 mb-8">Search Jobs</h1>
+
+            <!-- Top Filter Bar -->
+            <div class="flex flex-wrap items-center gap-4 mb-8 p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                <div class="flex-1 min-w-[200px]">
+                    <label for="search-input" class="sr-only">Search</label>
+                    <div class="relative">
+                        <i class="ph ph-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" id="search-input" value="UI UX Designer" placeholder="Search by job title or company..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:ring-teal-500 focus:border-teal-500 text-sm">
+                    </div>
+                </div>
+                
+                <!-- Filters Dropdowns -->
+                <div class="flex flex-wrap gap-4 items-center text-sm font-medium text-gray-700">
+                    <div class="relative">
+                        <select class="appearance-none pr-8 pl-3 py-2 border border-gray-200 rounded-lg bg-white cursor-pointer text-sm">
+                            <option>Location</option>
+                            <option>New York</option>
+                            <option>Remote</option>
+                        </select>
+                        <i class="ph ph-caret-down absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                    </div>
+                    <div class="relative">
+                        <select class="appearance-none pr-8 pl-3 py-2 border border-gray-200 rounded-lg bg-white cursor-pointer text-sm">
+                            <option>Job Type</option>
+                            <option>Full Time</option>
+                            <option>Part Time</option>
+                        </select>
+                        <i class="ph ph-caret-down absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                    </div>
+                    <div class="relative">
+                        <select class="appearance-none pr-8 pl-3 py-2 border border-gray-200 rounded-lg bg-white cursor-pointer text-sm">
+                            <option>Experience</option>
+                            <option>Senior</option>
+                            <option>Mid-level</option>
+                        </select>
+                        <i class="ph ph-caret-down absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                    </div>
+                    <div class="relative">
+                        <select class="appearance-none pr-8 pl-3 py-2 border border-gray-200 rounded-lg bg-white cursor-pointer text-sm">
+                            <option>Company Type</option>
+                            <option>Startup</option>
+                            <option>Enterprise</option>
+                        </select>
+                        <i class="ph ph-caret-down absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                    </div>
+
+                    <button class="text-sm text-gray-500 hover:text-gray-800 transition py-2 px-3">
+                        Clear Filter
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Content Grid (Job List + Detail) -->
+            <div class="grid lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                
+                <!-- Column 1: Job List (Scrollable) -->
+                <div class="lg:col-span-1 xl:col-span-1 space-y-4 max-h-[70vh] overflow-y-auto pr-2">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">32 results for "<span class="text-teal-600">UI UX Designer</span>"</h2>
+                    
+                    <!-- Job Card Item 1 (Active) -->
+                    <div class="bg-white p-4 rounded-xl shadow-lg border-2 border-teal-500 cursor-pointer transition">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-xl flex-shrink-0">
+                                <i class="ph ph-figma-logo"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 text-base">UI / UX Designer</h3>
+                                <p class="text-xs text-gray-500">Labornum</p>
+                            </div>
+                        </div>
+                        <div class="text-sm space-y-1 text-gray-600">
+                            <p class="font-medium text-teal-600">$95K - $120K</p>
+                            <p class="flex items-center gap-1 text-xs"><i class="ph ph-map-pin"></i> Phoenix, AZ</p>
+                            <p class="text-xs">Onsite</p>
+                        </div>
+                    </div>
+
+                    <!-- Job Card Item 2 -->
+                    <div class="bg-white p-4 rounded-xl border border-gray-100 hover:shadow-md cursor-pointer transition">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600 text-xl flex-shrink-0">
+                                <i class="ph ph-pencil-line"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 text-base">Senior UI Designer</h3>
+                                <p class="text-xs text-gray-500">Parlator</p>
+                            </div>
+                        </div>
+                        <div class="text-sm space-y-1 text-gray-600">
+                            <p class="font-medium text-teal-600">$100K - $140K</p>
+                            <p class="flex items-center gap-1 text-xs"><i class="ph ph-map-pin"></i> Columbus, OH</p>
+                            <p class="text-xs">Hybrid</p>
+                        </div>
+                    </div>
+
+                    <!-- Job Card Item 3 -->
+                    <div class="bg-white p-4 rounded-xl border border-gray-100 hover:shadow-md cursor-pointer transition">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-xl flex-shrink-0">
+                                <i class="ph ph-monitor-play"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 text-base">UX Copywriter</h3>
+                                <p class="text-xs text-gray-500">Alita</p>
+                            </div>
+                        </div>
+                        <div class="text-sm space-y-1 text-gray-600">
+                            <p class="font-medium text-teal-600">$70K - $95K</p>
+                            <p class="flex items-center gap-1 text-xs"><i class="ph ph-map-pin"></i> Tulsa, OK</p>
+                            <p class="text-xs">Remote</p>
+                        </div>
+                    </div>
+
+                    <!-- Job Card Item 4 -->
+                    <div class="bg-white p-4 rounded-xl border border-gray-100 hover:shadow-md cursor-pointer transition">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600 text-xl flex-shrink-0">
+                                <i class="ph ph-palette"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 text-base">Jr. Visual Designer</h3>
+                                <p class="text-xs text-gray-500">Docrurn</p>
+                            </div>
+                        </div>
+                        <div class="text-sm space-y-1 text-gray-600">
+                            <p class="font-medium text-teal-600">Negotiable</p>
+                            <p class="flex items-center gap-1 text-xs"><i class="ph ph-map-pin"></i> Cupertino, CA</p>
+                            <p class="text-xs">Onsite</p>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full text-teal-600 font-semibold text-sm py-2 hover:bg-teal-50 rounded-lg transition">Show more</button>
+                </div>
+                
+                <!-- Column 2: Job Detail (Fixed/Sticky on large screens) -->
+                <div class="lg:col-span-2 xl:col-span-3 lg:block hidden">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 sticky job-detail-sticky">
+                        
+                        <!-- Header and Actions -->
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 border-b pb-4">
+                            <div>
+                                <h2 class="text-2xl font-bold text-gray-900 mb-1">UI / UX Designer</h2>
+                                <p class="text-teal-600 font-semibold text-xl">$95K - $120K</p>
+                                <div class="flex flex-wrap gap-4 mt-2 text-sm text-gray-500">
+                                    <span class="px-3 py-1 bg-gray-100 rounded-full">Mid-Senior Level</span>
+                                    <span class="px-3 py-1 bg-gray-100 rounded-full">Full Time</span>
+                                    <span class="px-3 py-1 bg-gray-100 rounded-full">Remote</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 mt-4 md:mt-0 flex-shrink-0">
+                                <button class="px-4 py-2 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition flex items-center gap-2">
+                                    <i class="ph ph-bookmark-simple text-lg"></i> Save
+                                </button>
+                                <button class="px-6 py-2 bg-teal-500 text-white font-medium rounded-lg hover:bg-teal-600 transition shadow-md shadow-teal-500/20">
+                                    Apply Now
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Contact Recruiter (Mock) -->
+                        <div class="mb-8 p-4 bg-gray-50 rounded-xl flex justify-between items-center border border-gray-200">
+                            <div class="flex items-center gap-4">
+                                <img src="https://i.pravatar.cc/150?img=4" alt="Recruiter" class="w-12 h-12 rounded-full object-cover">
+                                <div>
+                                    <p class="font-semibold text-gray-900">Remy Murray</p>
+                                    <p class="text-sm text-gray-500">Hiring Manager</p>
+                                </div>
+                            </div>
+                            <button class="text-teal-600 font-medium text-sm hover:text-teal-700 transition">
+                                <i class="ph ph-chat-circle text-lg mr-1"></i> Message
+                            </button>
+                        </div>
+                        
+                        <!-- Job Description -->
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-bold text-gray-900">Job Description</h3>
+                            <p class="text-gray-600 leading-relaxed text-sm">
+                                Labornum is seeking a highly skilled and passionate UI/UX Designer to join our dynamic product team. You will be responsible for creating intuitive, beautiful, and functional user interfaces across our web and mobile platforms. The ideal candidate thrives in a fast-paced environment and has a strong portfolio showcasing user-centered design solutions.
+                            </p>
+
+                            <!-- Responsibilities -->
+                            <h3 class="text-xl font-bold text-gray-900">Responsibilities</h3>
+                            <ul class="list-disc list-inside space-y-2 text-gray-600 text-sm pl-4">
+                                <li>Collaborate with product managers and engineers to define and implement innovative solutions for the product direction, visuals, and experience.</li>
+                                <li>Execute all visual design stages from concept to final hand-off to engineering.</li>
+                                <li>Create wireframes, storyboards, user flows, process flows, and site maps to effectively communicate interaction and design ideas.</li>
+                                <li>Conduct user research and evaluate user feedback.</li>
+                                <li>Establish and promote design guidelines, best practices, and standards.</li>
+                            </ul>
+
+                            <!-- About Company -->
+                            <div class="pt-4 border-t border-gray-100">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-xl font-bold text-gray-900">About Company</h3>
+                                    <a href="#" class="text-teal-600 text-sm hover:text-teal-700 font-medium transition">View company profile</a>
+                                </div>
+                                <div class="flex items-start gap-4 p-4 bg-teal-50 rounded-xl border border-teal-200">
+                                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 text-teal-600 text-xl font-bold">L</div>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">LABORNUM COMPANY</p>
+                                        <p class="text-sm text-gray-600 mt-1 leading-relaxed">
+                                            Incidunt velit consequat eiuore dolor irure et sit ad ut irure dolore sunt Lorem tempor consectetur aliquip irure Ut non minim dolore irure tempor aliquip elit excepteur.
+                                        </p>
+                                        <div class="flex flex-wrap gap-x-6 gap-y-2 mt-3 text-sm text-gray-500">
+                                            <div class="flex items-center gap-1"><i class="ph ph-map-pin"></i> Tucson, AZ</div>
+                                            <div class="flex items-center gap-1"><i class="ph ph-users"></i> 100 - 500 employees</div>
+                                            <div class="flex items-center gap-1"><i class="ph ph-calendar"></i> Mon - Fri</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Column 3: Complete Your Profile CTA (Visible on all screens) -->
+                <div class="lg:col-span-3 xl:col-span-4 mt-8">
+                    <div class="bg-teal-600 p-8 rounded-2xl text-white shadow-xl flex flex-col lg:flex-row justify-between items-center gap-8 relative overflow-hidden">
+                        
+                        <!-- Abstract Background -->
+                        <div class="absolute inset-0 opacity-10 bg-white/10 [mask-image:radial-gradient(ellipse_at_center,white,transparent)]"></div>
+
+                        <div class="relative z-10 max-w-lg space-y-3">
+                            <h3 class="text-3xl font-bold">Complete your profile</h3>
+                            <p class="text-teal-100">
+                                Do consectetur proident proident. Id eiusmod deserunt consequat pariatur ex velit do Lorem reprehenderit.
+                            </p>
+                            <button class="mt-4 px-8 py-3 bg-white text-teal-600 font-semibold rounded-lg hover:bg-gray-100 transition shadow-lg">
+                                Update profile
+                            </button>
+                        </div>
+                        
+                        <!-- Floating Images -->
+                        <div class="relative z-10 flex-shrink-0">
+                            <img src="https://i.pravatar.cc/150?img=17" alt="Profile 1" class="w-16 h-16 rounded-full object-cover border-4 border-teal-500 absolute -top-4 right-16 shadow-lg">
+                            <img src="https://i.pravatar.cc/150?img=22" alt="Profile 2" class="w-56 h-56 rounded-full object-cover shadow-2xl border-8 border-teal-500">
+                            <img src="https://i.pravatar.cc/150?img=14" alt="Profile 3" class="w-12 h-12 rounded-full object-cover border-4 border-teal-500 absolute bottom-0 -left-4 shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    
+    <!-- Footer (Reused) -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="font-bold text-xl tracking-tight text-teal-400">SAKSHAM ROJGAR</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Connecting the best talent with the best companies. Find your dream job today.
+                    </p>
+                </div>
+
+                <!-- Column 1 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Product</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-teal-400 transition">Find a Job</a></li>
+                        <li><a href="#" class="hover:text-teal-400 transition">Companies</a></li>
+                        <li><a href="#" class="hover:text-teal-400 transition">Pricing</a></li>
+                        <li><a href="#" class="hover:text-teal-400 transition">Product Updates</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Resources</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-teal-400 transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-teal-400 transition">User Guides</a></li>
+                        <li><a href="#" class="hover:text-teal-400 transition">Webinars</a></li>
+                        <li><a href="#" class="hover:text-teal-400 transition">Help Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div class="lg:col-span-1">
+                    <h4 class="font-bold text-lg mb-6">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="ph ph-twitter-logo text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="ph ph-instagram-logo text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="ph ph-linkedin-logo text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="ph ph-youtube-logo text-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">© 2023 SAKSHAM ROJGAR. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

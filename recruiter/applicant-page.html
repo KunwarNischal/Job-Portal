@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicants Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom colors */
+        .primary-bg {
+            background-color: #2dd2a9;
+        }
+        .secondary-bg {
+            background-color: #2dd287;
+        }
+        .primary-text {
+            color: #2dd2a9;
+        }
+        .secondary-text {
+            color: #2dd287;
+        }
+    </style>
+</head>
+<body class="bg-gray-200 font-sans">
+
+    <div class="max-w-7xl mx-auto p-6">
+        <h1 class="  text-[#2dd287] flex justify-center font-bold text-3xl mb-4 items-center ">Applicants for Job Title</h1>
+
+        <!-- Applicants Table -->
+        <div class="overflow-x-auto bg-white rounded-lg shadow-xl">
+            <table class="min-w-full table-auto">
+                <thead class="bg-primary-bg text-white">
+                    <tr>
+                        <th class="py-2 px-4 text-left">Name</th>
+                        <th class="py-2 px-4 text-left">Email</th>
+                        <th class="py-2 px-4 text-left">Phone</th>
+                        <th class="py-2 px-4 text-left">Resume</th>
+                        <th class="py-2 px-4 text-left">Status</th>
+                        <th class="py-2 px-4 text-left">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Applicant 1 -->
+                    <tr class="border-b hover:bg-gray-100">
+                        <td class="py-2 px-4">John Doe</td>
+                        <td class="py-2 px-4">johndoe@example.com</td>
+                        <td class="py-2 px-4">(977) 123-4567</td>
+                        <td class="py-2 px-4">
+                            <a href="#" class="text-primary-text">View Resume</a>
+                        </td>
+                        <td class="py-2 px-4">
+                            <span class="text-green-500 font-semibold">Shortlisted</span>
+                        </td>
+                        <td class="py-2 px-4">
+                            <button class="bg-secondary-bg text-gray-400 px-4 py-2 rounded-lg hover:bg-green-600 hover:text-white">Contact</button>
+                        </td>
+                    </tr>
+
+                    <!-- Applicant 2 -->
+                    <tr class="border-b hover:bg-gray-100">
+                        <td class="py-2 px-4">Jane Smith</td>
+                        <td class="py-2 px-4">janesmith@example.com</td>
+                        <td class="py-2 px-4">(977) 234-5678</td>
+                        <td class="py-2 px-4">
+                            <a href="#" class="text-primary-text">View Resume</a>
+                        </td>
+                        <td class="py-2 px-4">
+                            <span class="text-yellow-500 font-semibold ">In Review</span>
+                        </td>
+                        <td class="py-2 px-4">
+                            <button class="bg-secondary-bg text-gray-400 px-4 py-2 rounded-lg hover:bg-green-600 hover:text-white">Contact</button>
+                        </td>
+                    </tr>
+
+                    <!-- Applicant 3 -->
+                    <tr class="border-b hover:bg-gray-100">
+                        <td class="py-2 px-4">Alice Brown</td>
+                        <td class="py-2 px-4">alicebrown@example.com</td>
+                        <td class="py-2 px-4">(977) 345-6789</td>
+                        <td class="py-2 px-4">
+                            <a href="#" class="text-primary-text">View Resume</a>
+                        </td>
+                        <td class="py-2 px-4">
+                            <span class="text-red-500 font-semibold">Rejected</span>
+                        </td>
+                        <td class="py-2 px-4">
+                            <button class="bg-secondary-bg text-gray-400 px-4 py-2 rounded-lg hover:bg-green-600 hover:text-white">Contact</button>
+                        </td>
+                    </tr>
+                    <!-- Applicant 4 -->
+                    <tr class="border-b hover:bg-gray-100">
+                        <td class="py-2 px-4">John wick</td>
+                        <td class="py-2 px-4">johnwick@example.com</td>
+                        <td class="py-2 px-4">(977) 123-4567</td>
+                        <td class="py-2 px-4">
+                            <a href="#" class="text-primary-text">View Resume</a>
+                        </td>
+                        <td class="py-2 px-4">
+                            <span class="text-green-500 font-semibold">Shortlisted</span>
+                        </td>
+                        <td class="py-2 px-4">
+                            <button class="bg-secondary-bg text-gray-400 px-4 py-2 rounded-lg hover:bg-green-600 hover:text-white">Contact</button>
+                        </td>
+                    </tr>
+                    <!-- Applicant 1 -->
+                    <tr class="border-b hover:bg-gray-100">
+                        <td class="py-2 px-4">John Doe</td>
+                        <td class="py-2 px-4">johndoe@example.com</td>
+                        <td class="py-2 px-4">(977) 123-4567</td>
+                        <td class="py-2 px-4">
+                            <a href="#" class="text-primary-text">View Resume</a>
+                        </td>
+                        <td class="py-2 px-4">
+                            <span class="text-green-500 font-semibold">Shortlisted</span>
+                        </td>
+                        <td class="py-2 px-4">
+                            <button class="bg-secondary-bg text-gray-400 px-4 py-2 rounded-lg hover:bg-green-600 hover:text-white">Contact</button>
+                        </td>
+                    </tr>
+                    <!-- Applicant 1 -->
+                    <tr class="border-b hover:bg-gray-100">
+                        <td class="py-2 px-4">John Doe</td>
+                        <td class="py-2 px-4">johndoe@example.com</td>
+                        <td class="py-2 px-4">(977) 123-4567</td>
+                        <td class="py-2 px-4">
+                            <a href="#" class="text-primary-text">View Resume</a>
+                        </td>
+                        <td class="py-2 px-4">
+                            <span class="text-green-500 font-semibold">Shortlisted</span>
+                        </td>
+                        <td class="py-2 px-4">
+                            <button class="bg-secondary-bg text-gray-400 px-4 py-2 rounded-lg hover:bg-green-600 hover:text-white">Contact</button>
+                        </td>
+                    </tr>
+
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

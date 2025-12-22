@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2dd2a9',
+                        secondary: '#2dd287',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 p-4 md:p-6 lg:p-8">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 md:p-8">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-8 pb-6 border-b-2 border-primary">
+            <h1 class="text-lg md:text-xl font-bold text-gray-700">COMPANY PROFILE</h1>
+            <button class="bg-primary hover:bg-secondary text-white px-5 py-2 rounded-md text-sm font-medium transition-colors hover:transition duration-300 shadow-sm">
+                Edit
+            </button>
+        </div>
+
+        <form>
+            <!-- Company Name and Email -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                <div class="flex flex-col">
+                    <label for="comapany" class="text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                    <input id="company" type="text" placeholder="Enter company name"
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+                <div class="flex flex-col">
+                    <label for="email" class="text-sm font-medium text-gray-700 mb-2">Your Email</label>
+                    <input id="email" type="email" placeholder="Info@gmail.com" 
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+            </div>
+
+            <!-- Website and Founded Date -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                <div class="flex flex-col">
+                    <label for="website" class="text-sm font-medium text-gray-700 mb-2">Website</label>
+                    <input  id="website" placeholder="mywebsite.com" 
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+                <div class="flex flex-col">
+                    <label for="date" class="text-sm font-medium text-gray-700 mb-2">Founded Date</label>
+                    <input id="date" type="text"placeholder="DD/MM/YYYY" 
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+            </div>
+
+            <!-- Category and Country -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                <div class="flex flex-col">
+                    <label class="text-sm font-medium text-gray-700 mb-2">Category</label>
+                    <select 
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                        <option>Web Designer</option>
+                        <option>Backend Developer</option>
+                        <option>Data Scientist</option>
+                        <option>UI/UX Designer</option>
+                        <option>Project Manager</option>
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <label for="country" class="text-sm font-medium text-gray-700 mb-2">Country</label>
+                    <input  id="country" placeholder="Nepal"
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-6 md:mb-8">
+                <label for="description" class="text-sm font-medium text-gray-700 mb-2 block">Description</label>
+                <textarea id="description"
+                    class="w-full px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white min-h-[100px] resize-y transition">write a description</textarea>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div class="flex items-center mb-4 md:mb-6 mt-8">
+                <div class="h-0.5 w-12 bg-primary mr-3"></div>
+                <h2 class="text-sm font-semibold text-gray-800">CONTACT INFORMATION</h2>
+            </div>
+
+            <!-- Phone and Email -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                <div class="flex flex-col">
+                    <label  for="phone" class="text-sm font-medium text-gray-700 mb-2">Phone</label>
+                    <input type="tel" value="+977"  id="phone"  
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+                <div class="flex flex-col">
+                    <label for="email" class="text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email"  id="email" placeholder="info@gmail.com"
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+            </div>
+
+            <!-- Country and City -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                <div class="flex flex-col">
+                    <label for="Country" class="text-sm font-medium text-gray-700 mb-2">Country</label>
+                    <input type="text" id="Country" placeholder="Nepal"
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+                <div class="flex flex-col">
+                    <label for="city" class="text-sm font-medium text-gray-700 mb-2">City</label>
+                    <input type="text"  id ="city" placeholder="kathmandu"
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+            </div>
+
+            <!-- Zip and Address -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                <div class="flex flex-col">
+                    <label for="zip" class="text-sm font-medium text-gray-700 mb-2">Zip</label>
+                    <input id="zip" type="text" value="44600"
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+                <div class="flex flex-col">
+                    <label for="address" class="text-sm font-medium text-gray-700 mb-2">Address</label>
+                    <input id="address" type="text"  
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+            </div>
+
+            <!-- Map
+            <div class="w-full h-48 md:h-64 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg border-2 border-primary/20 flex items-center justify-center text-gray-600 text-sm mb-6 md:mb-8 shadow-inner">
+                <div class="text-center">
+                    <svg class="w-12 h-12 mx-auto mb-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span class="font-medium">Map View (Delhi, India)</span>
+                </div>
+            </div> -->
+
+            <!-- Social Links Section -->
+            <div class="flex items-center mb-4 md:mb-6 mt-8">
+                <div class="h-0.5 w-12 bg-secondary mr-3"></div>
+                <h2 class="text-sm font-semibold text-gray-800">SOCIAL LINK</h2>
+            </div>
+
+            <!-- Facebook and Twitter -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                <div class="flex flex-col">
+                    <label class="text-sm font-medium text-gray-700 mb-2">Facebook</label>
+                    <input type="url" placeholder="https://www.facebook.com/" 
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+                <div class="flex flex-col">
+                    <label class="text-sm font-medium text-gray-700 mb-2">Twitter</label>
+                    <input type="url" placeholder="https://www.twitter.com/" 
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+            </div>
+
+            <!-- Google+ and LinkedIn -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
+                <div class="flex flex-col">
+                    <label class="text-sm font-medium text-gray-700 mb-2">Google+</label>
+                    <input type="url" placeholder="https://www.google.com/" 
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+                <div class="flex flex-col">
+                    <label class="text-sm font-medium text-gray-700 mb-2">Linkedin</label>
+                    <input type="url" placeholder="https://www.linkedin.com/" 
+                        class="px-3 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 bg-white transition">
+                </div>
+            </div>
+
+            <!-- Update Button -->
+            <button type="button" 
+                class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-md text-sm font-medium transition-all duration-300 w-full md:w-auto shadow-lg black-300 hover:shadow-lg transform hover:-translate-y-0.5">
+                UPDATE
+            </button>
+        </form>
+    </div>
+</body>
+</html>
